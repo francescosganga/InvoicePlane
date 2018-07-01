@@ -101,6 +101,7 @@
                         <li><?php echo anchor('reports/payment_history', trans('payment_history')); ?></li>
                         <li><?php echo anchor('reports/sales_by_client', trans('sales_by_client')); ?></li>
                         <li><?php echo anchor('reports/sales_by_year', trans('sales_by_date')); ?></li>
+                        <li><?php echo anchor('reports/quote_history', trans('quote_history')); ?></li>
                     </ul>
                 </li>
 
