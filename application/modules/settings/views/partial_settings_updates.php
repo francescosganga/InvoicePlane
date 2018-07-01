@@ -72,8 +72,9 @@
         <div class="panel-body">
 
             <div class="form-group">
+                InvoicePlane modified by <a href="https://github.com/francescosganga/">Francesco Sganga</a><br />
                 <input type="text" class="form-control"
-                       value="<?php echo get_setting('current_version'); ?>" readonly="readonly">
+                       value="<?php echo get_setting('current_version'); ?> " readonly="readonly">
             </div>
             <div id="updatecheck-results">
                 <div id="updatecheck-loading" class="btn btn-default btn-sm disabled">
