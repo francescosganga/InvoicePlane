@@ -150,7 +150,7 @@ foreach ($custom_fields as $custom_field) {
                                 <?php if ($client->client_phone) : ?>
                                     <tr>
                                         <th><?php _trans('phone'); ?></th>
-                                        <td><<a href="tel:<?php _htmlsc($client->client_phone); ?>"><?php _htmlsc($client->client_phone); ?></a>
+                                        <td><a href="tel:<?php _htmlsc($client->client_phone); ?>"><?php _htmlsc($client->client_phone); ?></a>
                                             <br />
                                             <a style="font-size: 16px;" target="_blank" href="https://api.whatsapp.com/send?phone=39<?php _htmlsc($client->client_phone); ?>"><img style="width: 18px; height: 18px;" src="<?php echo base_url(); ?>assets/core/img/whatsapp-icon.png">WHATSAPP</a>
                                         </td>
