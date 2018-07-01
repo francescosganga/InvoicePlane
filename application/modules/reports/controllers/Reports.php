@@ -63,6 +63,25 @@ class Reports extends Admin_Controller
         $this->layout->buffer('content', 'reports/payment_history_index')->render();
     }
 
+    public function quote_history()
+    {
+        if ($this->input->post('btn_submit')) {
+            $data = array(
+                'results' => $this->mdl_reports->quote_history($this->input->post('from_date'), $this->input->post('to_date')),
+                'from_date' => $this->input->post('from_date'),
+                'to_date' => $this->input->post('to_date'),
+            );
+
+            $html = $this->load->view('reports/quote_history', $data, true);
+
+            $this->load->helper('mpdf');
+
+            pdf_create($html, trans('quote_history'), true);
+        }
+
+        $this->layout->buffer('content', 'reports/quote_history_index')->render();
+    }
+
     public function invoice_aging()
     {
         if ($this->input->post('btn_submit')) {

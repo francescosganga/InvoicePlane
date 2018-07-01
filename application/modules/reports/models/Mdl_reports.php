@@ -111,6 +111,22 @@ class Mdl_Reports extends CI_Model
      * @param null $to_date
      * @return mixed
      */
+    public function quote_history($from_date = null, $to_date = null)
+    {
+        $this->load->model('quotes/mdl_quotes');
+
+        if ($from_date and $to_date) {
+            $from_date = date_to_mysql($from_date);
+            $to_date = date_to_mysql($to_date);
+
+            $this->mdl_quotes->where('quote_status_id', 4);
+            $this->mdl_quotes->where('quote_date_created >=', $from_date);
+            $this->mdl_quotes->where('quote_date_created <=', $to_date);
+        }
+
+        return $this->mdl_quotes->get()->result();
+    }
+
     public function payment_history($from_date = null, $to_date = null)
     {
         $this->load->model('payments/mdl_payments');
